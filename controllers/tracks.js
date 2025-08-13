@@ -7,12 +7,17 @@ router.post('/', async (req, res) => {
         const createdTrack = await Track.create(req.body);
         res.status(201).json(createdTrack);
     } catch (err) {
-        res.status(500).json({err: err.message});
+        res.status(500).json({ err: err.message });
     }
 });
 
 router.get('/', async (req, res) => {
-    res.send('Success');
-})
+    try {
+        const foundTracks = await Track.find();
+        res.status(200).json(foundTracks);
+    } catch (err) {
+        res.status(500).json({ err: err.message });
+    }
+});
 
 module.exports = router;
