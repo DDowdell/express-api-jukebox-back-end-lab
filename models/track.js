@@ -10,3 +10,7 @@ const trackSchema = mongoose.Schema({
         required: true,
     },
 });
+
+const Track = mongoose.model('Track', trackSchema);
+
+module.exports = Track;
