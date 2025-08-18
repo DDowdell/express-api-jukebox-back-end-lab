@@ -9,6 +9,9 @@ const trackSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    album: {
+        type: String,
+    },
 });
 
 const Track = mongoose.model('Track', trackSchema);
